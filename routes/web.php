@@ -10,18 +10,18 @@ Route::get('/', function () {
 Route::get('/jobs', function () {
     return view('jobs', [
         'jobs' => [
-            [
+            [    'id'=> 1 ,
                 'title' => 'Director',
                 'salary' => "$50,000"
             ],
-            [
+            [    'id'=> 2,
                 'title' => 'Programmer',
                 'salary' => '$70,000'
             ]
         ]
     ]);
 });
-Route::get('/job/{id}',function ($id){
+Route::get('/jobs/{id}',function ($id){
        $jobs = [
             [   'id'=> 1 ,
                 'title' => 'Director',
