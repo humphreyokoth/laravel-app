@@ -5,7 +5,7 @@
 
     <form method="POST" action="/jobs">
         @csrf
-        
+
         <div class="space-y-12">
             <div class="border-b border-gray-900/10 pb-12">
                 <h2 class="text-base font-semibold leading-7 text-gray-900">Profile</h2>
@@ -38,8 +38,15 @@
                         </div>
                     </div>
 
-
-
+                </div>
+                <div>
+                    @if ($errors->any())
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li class="text-red-500">{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
 
 
                 </div>
