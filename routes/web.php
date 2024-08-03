@@ -24,6 +24,7 @@ Route::post('/jobs',function(){
         'title'=>['required','min:3'],
         'salary'=>['required']
     ]);
+    
     Job::create([
         'title'=>request('title'),
         'salary'=>request('salary'),

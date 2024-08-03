@@ -21,9 +21,13 @@
 
                                 <input type="text" name="title" id="title" autocomplete="title"
                                     class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                                    placeholder="Shift leader">
+                                    placeholder="Shift leader" required>
                             </div>
+                            @error('title')
+                                <p class="text-xs text-red-500"> {{ $message }}</p>
+                            @enderror
                         </div>
+
                     </div>
                     <div class="sm:col-span-4">
                         <label for="salary" class="block text-sm font-medium leading-6 text-gray-900">Salary</label>
@@ -33,13 +37,16 @@
 
                                 <input type="text" name="salary" id="salary" autocomplete="salary"
                                     class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                                    placeholder="$50,000">
+                                    placeholder="$50,000" required>
                             </div>
+                            @error('salary')
+                            <p class="text-xs text-red-500"> {{$message}}</p>
+                         @enderror
                         </div>
                     </div>
 
                 </div>
-                <div>
+                {{-- <div>
                     @if ($errors->any())
                         <ul>
                             @foreach ($errors->all() as $error)
@@ -49,7 +56,7 @@
                     @endif
 
 
-                </div>
+                </div> --}}
             </div>
 
 
