@@ -1,23 +1,25 @@
 <?php
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 
-class Job extends Model{
+class Job extends Model
+{
 
     use HasFactory;
-   protected $table =  "job_listings";
+    protected $table =  "job_listings";
 
-   protected $fillable = ['title','salary'];
-
-   public function employer()
-   {
-    return $this->belongsTo(Employer::class);
-   }
-   public function tags()
-   {
-    return $this->belongsToMany(Job::class, foreignPivotKey:"job_listing_id");
-   }
+    //    protected $fillable = ['employer','title','salary'];
+    protected $guarded = [];
+    public function employer()
+    {
+        return $this->belongsTo(Employer::class);
+    }
+    public function tags()
+    {
+        return $this->belongsToMany(Job::class, foreignPivotKey: "job_listing_id");
+    }
 }
