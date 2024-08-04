@@ -50,7 +50,7 @@ class JobController extends Controller
             'title' => ['required', 'min:3'],
             'salary' => ['required']
         ]);
-        //    $job= Job::findOrFail($id);
+   
 
         $job->update([
             'title' => request('title'),
