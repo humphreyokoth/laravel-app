@@ -25,9 +25,9 @@ class JobController extends Controller
         return view('jobs.show', ['job' => $job]);
     }
 
-    public function store()
+    public function store(Request $request)
     {
-        request()->validate([
+        $request->validate([
             'title' => ['required', 'min:3'],
             'salary' => ['required']
         ]);
@@ -44,9 +44,9 @@ class JobController extends Controller
         // $job = Job::find($id);
         return view('jobs.edit', ['job' => $job]);
     }
-    public function update(Job $job)
+    public function update(Job $job,Request $request)
     {
-        request()->validate([
+        $request->validate([
             'title' => ['required', 'min:3'],
             'salary' => ['required']
         ]);

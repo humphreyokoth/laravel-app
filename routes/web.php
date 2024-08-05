@@ -15,6 +15,8 @@ Route::resource('jobs',JobController::class);
 Route::get('/register',[RegistrationController::class,'create']);
 Route::post('/register',[RegistrationController::class,'store']);
 Route::get('/login',[LoginController::class,'create']);
+Route::post('/login',[LoginController::class,'store']);
+Route::post('/logout',[LoginController::class,'destroy']);
 // Index
 
 // Route::get('/jobs', [JobController::class, 'index']);
