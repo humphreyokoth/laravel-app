@@ -4,8 +4,8 @@ use App\Models\Job;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JobController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegistrationController;
-
 
 Route::view('/', 'home');
 Route::view('/contact', 'contact');
@@ -13,7 +13,8 @@ Route::view('/contact', 'contact');
 Route::resource('jobs',JobController::class);
 // Auth
 Route::get('/register',[RegistrationController::class,'create']);
-Route::get('/login',[RegistrationController::class,'index']);
+Route::post('/register',[RegistrationController::class,'store']);
+Route::get('/login',[LoginController::class,'create']);
 // Index
 
 // Route::get('/jobs', [JobController::class, 'index']);
