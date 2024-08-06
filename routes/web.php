@@ -6,9 +6,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegistrationController;
+use App\Jobs\TranslateJob;
 
 Route::get('test',function(){
 
+    $job = Job::first();
+TranslateJob::dispatch($job);
 });
 Route::view('/', 'home');
 Route::view('/contact', 'contact');
